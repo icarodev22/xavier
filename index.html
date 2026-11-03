@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="DJ Xavier, o DJ da Baguncinha. Mais de 500 XV e casamentos realizados. Peça seu orçamento.">
+<title>DJ Xavier — O DJ da Baguncinha</title>
+<script src="assets/js/runtime.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800&amp;family=Sora:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#0A0A0A;color:#F5F5F5;font-family:Sora,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+a{color:#F5F5F5}a:hover{color:#B7FF00}
+img,video{display:block;max-width:100%}
+button{font-family:inherit}
+:focus-visible{outline:2px solid #B7FF00;outline-offset:3px}
+.root{--lime:#B7FF00;--mag:#FF269A;--org:#FF6338;--r:20px;--ease:cubic-bezier(.22,1,.36,1);position:relative;overflow-x:clip;background:#0A0A0A;isolation:isolate}
+.wrap{position:relative;width:100%;max-width:1440px;margin:0 auto;padding:0 clamp(16px,3.4vw,56px)}
+section{position:relative;scroll-margin-top:72px}
+.cond{font-family:"Barlow Condensed",sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:-.005em}
+.kick{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#F5F5F5}
+.kick::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--mag)}
+.media{position:relative;overflow:hidden;border-radius:var(--r);background:#161616;isolation:isolate;-webkit-mask-image:-webkit-radial-gradient(white,black)}
+.media img,.media video{width:100%;height:100%;object-fit:cover}
+
+/* fundo interativo */
+.bg{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;--mx:0;--my:0;--sy:0}
+.blob{position:absolute;display:block;will-change:transform}
+.blob i{display:block;width:100%;height:100%;animation:morph 22s ease-in-out infinite alternate}
+.blob.l{width:620px;height:560px;left:58%;top:8%;transform:translate3d(calc(var(--mx) * 46px),calc(var(--my) * 34px + var(--sy) * -60px),0)}
+.blob.l i{background:radial-gradient(closest-side,rgba(183,255,0,.16),rgba(183,255,0,0));border-radius:42% 58% 63% 37% / 41% 44% 56% 59%}
+.blob.m{width:460px;height:440px;left:-6%;top:46%;transform:translate3d(calc(var(--mx) * -38px),calc(var(--my) * -28px + var(--sy) * -110px),0)}
+.blob.m i{background:radial-gradient(closest-side,rgba(255,38,154,.11),rgba(255,38,154,0));border-radius:58% 42% 38% 62% / 52% 61% 39% 48%;animation-duration:26s}
+.blob.o{width:380px;height:360px;left:72%;top:70%;transform:translate3d(calc(var(--mx) * 30px),calc(var(--my) * -40px + var(--sy) * -40px),0)}
+.blob.o i{background:radial-gradient(closest-side,rgba(255,99,56,.10),rgba(255,99,56,0));border-radius:37% 63% 51% 49% / 60% 37% 63% 40%;animation-duration:19s}
+.spark{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px 2px rgba(183,255,0,.55);opacity:.15;animation:twinkle 5s ease-in-out infinite;transform:translate3d(calc(var(--mx) * 12px),calc(var(--sy) * -30px),0)}
+.spark.m{background:var(--mag);box-shadow:0 0 10px 2px rgba(255,38,154,.5)}
+.spark.o{background:var(--org);box-shadow:0 0 10px 2px rgba(255,99,56,.5)}
+
+/* botões */
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border-radius:999px;border:0;background:var(--lime);color:#0A0A0A;font-size:15px;font-weight:700;text-decoration:none;cursor:pointer;transition:transform .2s var(--ease),box-shadow .2s var(--ease),background .2s;white-space:nowrap}
+.pill:hover{color:#0A0A0A;transform:scale(1.035);box-shadow:0 0 0 6px rgba(183,255,0,.16),0 10px 34px -8px rgba(183,255,0,.55)}
+.pill:active{transform:scale(.98)}
+.pill:focus-visible{outline:2px solid #F5F5F5;outline-offset:3px}
+.pill svg{width:16px;height:16px}
+.pill.line{background:rgba(10,10,10,.25);color:#F5F5F5;box-shadow:inset 0 0 0 1.5px rgba(245,245,245,.55)}
+.pill.line:hover{background:#F5F5F5;color:#0A0A0A;box-shadow:inset 0 0 0 1.5px #F5F5F5}
+.pill.dark{background:#0A0A0A;color:#F5F5F5}
+.pill.dark:hover{color:#B7FF00;box-shadow:0 0 0 6px rgba(10,10,10,.18)}
+.pill.sm{min-height:42px;padding:0 20px;font-size:14px}
+.rbtn{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;border:0;background:#1C1C1C;color:#F5F5F5;cursor:pointer;transition:background .15s,color .15s}
+.rbtn:hover{background:var(--lime);color:#0A0A0A}
+.rbtn svg{width:18px;height:18px}
+
+/* header */
+.hdr{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
+.hdr.solid{background:#0A0A0A;box-shadow:0 1px 0 rgba(245,245,245,.06)}
+.hdr-bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:76px;gap:20px}
+.brand{display:flex;align-items:center;gap:14px;min-width:0}
+.brand .lg{display:flex;align-items:center;min-height:44px}
+.brand img{width:141px;height:18px}
+.brand .ig{font-size:13px;font-weight:500;color:rgba(245,245,245,.72);text-decoration:none}
+.brand .ig:hover{color:var(--lime)}
+.nav{display:flex;gap:4px;list-style:none;margin:0;padding:5px;border-radius:999px;background:rgba(10,10,10,.42);box-shadow:inset 0 0 0 1px rgba(245,245,245,.1)}
+.nav a{display:inline-flex;align-items:center;height:38px;padding:0 18px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:rgba(245,245,245,.78);transition:color .15s,background .15s}
+.nav a:hover{color:#F5F5F5;background:rgba(245,245,245,.08)}
+.nav a.on{background:var(--lime);color:#0A0A0A}
+.hdr-r{display:flex;justify-content:flex-end;align-items:center;gap:8px}
+.menu-btn{display:none}
+.mnav{display:none}
+
+/* hero */
+.hero{height:clamp(640px,100svh,980px);overflow:hidden;background:#0A0A0A;border-radius:0 0 28px 28px;isolation:isolate}
+.hero-img{position:absolute;inset:-40px 0 0 0;will-change:transform}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 44%}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.6) 0%,rgba(10,10,10,0) 18%,rgba(10,10,10,0) 36%,rgba(10,10,10,.8) 64%,rgba(10,10,10,.96) 100%)}
+.hero-glow{position:absolute;left:-10%;right:-10%;bottom:-160px;height:320px;background:radial-gradient(closest-side,rgba(183,255,0,.22),rgba(183,255,0,0));pointer-events:none}
+.hero-body{position:absolute;left:0;right:0;bottom:0;padding-bottom:52px}
+.hero-row{display:flex;align-items:flex-end;justify-content:space-between;gap:32px}
+.hero-logo{width:clamp(280px,48vw,720px);height:auto;margin-top:20px}
+.hero-act{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.h-photo{animation:heroIn 1.2s var(--ease) both}
+.h-logo{clip-path:inset(0 100% 0 0);animation:wipe .8s var(--ease) .25s forwards}
+.h-up{animation:up .65s var(--ease) .45s both}
+.h-up2{animation:up .65s var(--ease) .55s both}
+.has-intro .h-photo{animation-delay:1.3s}
+.has-intro .h-logo{animation-delay:1.9s}
+.has-intro .h-up{animation-delay:2s}
+.has-intro .h-up2{animation-delay:2.08s}
+.has-intro .hdr{animation:fade .5s var(--ease) 1.95s both}
+
+/* intro */
+.intro{position:fixed;inset:0;z-index:100;background:#0A0A0A;display:flex;align-items:center;justify-content:center;pointer-events:none;animation:introOut .5s cubic-bezier(.7,0,.3,1) 1.65s forwards}
+.intro-mark{position:relative;width:min(560px,78vw);aspect-ratio:768/98;transform:translateX(40.95%);animation:introCenter .3s cubic-bezier(.65,0,.35,1) 1.1s forwards,introPulse .55s ease-out 1.1s,introLeave .5s cubic-bezier(.7,0,.3,1) 1.65s forwards}
+.intro-mark img{position:absolute;inset:0;width:100%;height:100%}
+.intro-x{opacity:0;transform:scale(.82);transform-origin:9% 50%;animation:xIn .4s cubic-bezier(.22,1,.36,1) forwards}
+.intro-rest{clip-path:inset(-10% 83% -10% 0);animation:revealRest .7s cubic-bezier(.65,0,.25,1) .4s forwards}
+.intro-edge{position:absolute;top:-14%;bottom:-14%;left:17%;width:2px;border-radius:2px;background:var(--lime);box-shadow:0 0 14px 2px rgba(183,255,0,.75);opacity:0;animation:edge .7s cubic-bezier(.65,0,.25,1) .4s forwards}
+.intro-glow{position:absolute;left:-12%;top:-260%;width:42%;height:620%;border-radius:50%;background:radial-gradient(closest-side,rgba(183,255,0,.30),rgba(183,255,0,0));opacity:0;animation:glowIn .4s ease-out forwards,glowWide .6s cubic-bezier(.22,1,.36,1) 1.1s forwards}
+
+/* scroll reveal */
+[data-r]{opacity:0;transform:translate3d(0,25px,0);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+[data-r].in{opacity:1;transform:none}
+[data-r="img"]{transform:none}
+[data-r="img"] img{transform:scale(1.08);transition:transform 1.1s var(--ease)}
+[data-r="img"].in img{transform:scale(1)}
+[data-d="1"]{transition-delay:.07s}[data-d="2"]{transition-delay:.14s}[data-d="3"]{transition-delay:.21s}
+
+/* carreira */
+.car{padding:150px 0 110px}
+.car-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:center}
+.car-txt{grid-column:1/6}
+.car-pics{grid-column:7/13;position:relative;padding:0 0 90px 70px}
+.h2{margin:16px 0 0;font-size:clamp(46px,5.4vw,80px);line-height:.9}
+.h2 em{font-style:normal;color:var(--lime)}
+.car-p{margin:26px 0 0;font-size:18px;line-height:1.6;color:rgba(245,245,245,.78);max-width:470px}
+.car-p strong{color:#F5F5F5;font-weight:600}
+.stat{display:flex;align-items:center;gap:18px;margin-top:38px}
+.stat b{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:64px;line-height:.85;color:var(--lime)}
+.stat span{font-size:15px;line-height:1.35;color:#F5F5F5;max-width:150px}
+.car-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:36px}
+.car-big{aspect-ratio:4/5}
+.car-big img{object-position:50% 48%;will-change:transform}
+.car-small{position:absolute;left:0;bottom:0;width:44%;aspect-ratio:3/4;border:6px solid #0A0A0A;border-radius:26px}
+.car-small img{object-position:50% 30%}
+
+
+/* crew */
+.crew{padding:0 0 130px}
+.crew-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.crew-mark{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;width:100%;max-width:540px;justify-self:center}
+.crew-mark img{position:relative;width:88%;height:auto;will-change:transform;filter:drop-shadow(0 18px 40px rgba(0,0,0,.45))}
+.crew-glow{position:absolute;inset:4%;border-radius:50%;background:radial-gradient(closest-side,rgba(183,255,0,.28),rgba(183,255,0,.08) 60%,rgba(183,255,0,0));pointer-events:none}
+.crew-txt{display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+.crew-h{margin:0;font-size:clamp(40px,4vw,60px);line-height:.92}
+.crew-h span{color:var(--lime)}
+.track{display:inline-flex;align-items:center;gap:14px;min-height:60px;padding:10px 18px 10px 12px;border-radius:999px;background:#151515;box-shadow:inset 0 0 0 1px rgba(245,245,245,.1);text-decoration:none;color:#F5F5F5;transition:background .2s,box-shadow .2s}
+.track .sp{flex:none;width:36px;height:36px;transition:transform .25s var(--ease)}
+.track-name{font-size:17px;font-weight:600;line-height:1}
+.track-go{flex:none;width:16px;height:16px;color:rgba(245,245,245,.5);transition:color .2s,transform .2s var(--ease)}
+.track:hover{background:#1C1C1C;color:#F5F5F5;box-shadow:inset 0 0 0 1px rgba(30,215,96,.55)}
+.track:hover .sp{transform:rotate(-12deg) scale(1.06)}
+.track:hover .track-go{color:#1ED760;transform:translate(2px,-2px)}
+.crew-pic{aspect-ratio:3/4}
+.crew-pic img{object-position:50% 28%}
+
+/* shows */
+.shows{padding:40px 0 140px}
+.sh-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:56px}
+.lbl2{display:flex;align-items:center;gap:12px;margin:0 0 26px}
+.lbl2 h3{margin:0;font-size:30px;line-height:1}
+.lbl2 i{flex:1;height:1px;background:rgba(245,245,245,.12)}
+
+.vc{position:relative;outline:none;touch-action:pan-y;user-select:none;-webkit-user-select:none;overflow:hidden;padding:6px 0}
+.vc:focus-visible .stage{outline:2px solid var(--lime);outline-offset:8px;border-radius:24px}
+.stage{position:relative;width:360px;aspect-ratio:9/16;margin:0 auto}
+.vs{position:absolute;inset:0;border-radius:var(--r);overflow:hidden;isolation:isolate;-webkit-mask-image:-webkit-radial-gradient(white,black);background:#161616;transition:transform .42s var(--ease),opacity .42s var(--ease);will-change:transform;cursor:pointer}
+.vs video{width:100%;height:100%;object-fit:cover;border-radius:var(--r);pointer-events:none}
+.vs.p0{transform:translate3d(0,0,0);z-index:3}
+.vs.pl1{transform:translate3d(calc(-100% - 28px),0,0) scale(.86);z-index:2;opacity:.45}
+.vs.pr1{transform:translate3d(calc(100% + 28px),0,0) scale(.86);z-index:2;opacity:.45}
+.vs.pl2{transform:translate3d(calc(-200% - 56px),0,0) scale(.72);opacity:0;pointer-events:none}
+.vs.pr2{transform:translate3d(calc(200% + 56px),0,0) scale(.72);opacity:0;pointer-events:none}
+.play{position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;border:0;background:var(--lime);color:#0A0A0A;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity .25s,transform .25s var(--ease),box-shadow .25s;box-shadow:0 0 0 8px rgba(183,255,0,.18)}
+.play:hover{transform:scale(1.06);box-shadow:0 0 0 12px rgba(183,255,0,.2)}
+.play svg{width:24px;height:24px}
+.vs:not(.p0) .play{opacity:0;pointer-events:none}
+.vs.is-playing .play{opacity:0}
+.vs.is-playing:hover .play,.vs.is-playing .play:focus-visible{opacity:.92}
+.eq{position:absolute;left:16px;top:16px;display:flex;align-items:flex-end;gap:3px;height:14px;opacity:0;transition:opacity .25s}
+.eq i{width:3px;height:100%;border-radius:2px;background:var(--lime);transform-origin:bottom;animation:eq 0.9s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:-.3s}.eq i:nth-child(3){animation-delay:-.6s}
+.vs.is-playing .eq{opacity:1}
+.dots{display:flex;justify-content:center;gap:2px;margin-top:22px}
+.dots button{width:44px;height:44px;border:0;background:transparent;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0}
+.dots button i{display:block;width:8px;height:8px;border-radius:999px;background:rgba(245,245,245,.28);transition:width .3s var(--ease),background .3s}
+.dots button.on i{width:28px;background:var(--lime)}
+
+.pt{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:clamp(16px,3.4vw,56px);padding:0 clamp(16px,3.4vw,56px);scrollbar-width:none;overscroll-behavior-x:contain;cursor:grab;outline:none}
+.pt::-webkit-scrollbar{display:none}
+.pt.drag{cursor:grabbing;scroll-snap-type:none}
+.pt:focus-visible{box-shadow:inset 0 0 0 2px var(--lime)}
+.pi{flex:none;height:600px;padding:0;border:0;scroll-snap-align:start;cursor:zoom-in}
+.pi.a{aspect-ratio:3/4}.pi.b{aspect-ratio:4/5}
+.pi img{transition:transform .5s var(--ease);-webkit-user-drag:none;user-select:none}
+.pi:hover img{transform:scale(1.03)}
+.ptrack{position:relative;height:3px;margin-top:26px;border-radius:3px;background:rgba(245,245,245,.12);overflow:hidden}
+.pthumb{position:absolute;top:0;bottom:0;left:0;width:30%;border-radius:3px;background:var(--lime);will-change:transform}
+
+.lb{position:fixed;inset:0;z-index:90;background:rgba(10,10,10,.97);display:flex;align-items:center;justify-content:center;padding:80px 16px 92px;animation:fade .2s ease;outline:none}
+.lb img{max-width:min(92vw,1000px);max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:var(--r)}
+.lb-x{position:absolute;top:16px;right:16px}
+.lb-nav{position:absolute;bottom:24px;left:0;right:0;display:flex;justify-content:center;gap:10px}
+
+/* contato */
+.ct{padding:120px 0 120px}
+.ct-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:start}
+.ct-l{grid-column:1/8}
+.ct-r{grid-column:9/13;align-self:end;display:flex;flex-direction:column;gap:12px}
+.ct-r .lbl3{font-size:13px;color:rgba(245,245,245,.65)}
+.ct-lead{margin:18px 0 0;font-size:17px;line-height:1.55;color:rgba(245,245,245,.78);max-width:520px}
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:36px}
+.fld{display:flex;flex-direction:column;gap:8px}
+.fld.full{grid-column:1/-1}
+.fld label{font-size:13px;font-weight:500;color:rgba(245,245,245,.8)}
+.fld input,.fld select,.fld textarea{width:100%;min-height:54px;padding:15px 18px;border-radius:16px;border:1.5px solid rgba(245,245,245,.12);background:#121212;color:#F5F5F5;font-family:Sora,sans-serif;font-size:15px;transition:border-color .15s}
+.fld textarea{min-height:110px;resize:vertical}
+.fld select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#B7FF00 50%),linear-gradient(135deg,#B7FF00 50%,transparent 50%);background-position:calc(100% - 24px) 24px,calc(100% - 18px) 24px;background-size:6px 6px;background-repeat:no-repeat}
+.fld input:hover,.fld select:hover,.fld textarea:hover{border-color:rgba(245,245,245,.25)}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--lime)}
+.fld input::-webkit-calendar-picker-indicator{filter:invert(.85)}
+.form-foot{grid-column:1/-1;display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:6px}
+.form-foot p{margin:0;font-size:13px;color:rgba(245,245,245,.6);max-width:290px;line-height:1.5}
+.status{grid-column:1/-1;padding:14px 18px;border-radius:16px;background:rgba(183,255,0,.1);border:1.5px solid rgba(183,255,0,.4);font-size:15px;line-height:1.5}
+.ct-photo{aspect-ratio:4/5}
+.ct-photo img{object-position:50% 25%}
+.ig-card{display:flex;align-items:center;gap:14px;width:100%;padding:12px 18px 12px 12px;border-radius:22px;background:#141414;box-shadow:inset 0 0 0 1px rgba(245,245,245,.1);text-decoration:none;color:#F5F5F5;transition:box-shadow .2s,background .2s}
+.ig-ico{flex:none;display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:15px;background:#1E1E1E;color:#F5F5F5;transition:background .2s,color .2s}
+.ig-ico svg{width:22px;height:22px}
+.ig-txt{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
+.ig-txt small{font-size:12px;font-weight:500;color:rgba(245,245,245,.6);line-height:1}
+.ig-txt b{font-size:17px;font-weight:600;line-height:1.1}
+.ig-go{flex:none;width:18px;height:18px;color:rgba(245,245,245,.5);transition:color .2s,transform .2s var(--ease)}
+.ig-card:hover,.ig-card:active{color:#F5F5F5;background:#181818;box-shadow:inset 0 0 0 1.5px var(--lime)}
+.ig-card:hover .ig-ico,.ig-card:active .ig-ico{background:var(--lime);color:#0A0A0A}
+.ig-card:hover .ig-go{color:var(--lime);transform:translate(2px,-2px)}
+
+/* footer */
+.ft{position:relative;z-index:1;padding:64px 0 28px;background:#0F0F0F;border-radius:28px 28px 0 0;box-shadow:inset 0 1px 0 rgba(245,245,245,.06)}
+.ft-a{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.ft-logo{display:inline-flex;align-items:center;min-height:44px;flex:none}
+.ft-logo img{display:block;width:clamp(200px,20vw,280px);height:auto;aspect-ratio:768/98}
+.ft-nav{display:flex;gap:4px;list-style:none;margin:0;padding:5px;border-radius:999px;background:#161616;box-shadow:inset 0 0 0 1px rgba(245,245,245,.08)}
+.ft-nav a{display:inline-flex;align-items:center;height:40px;padding:0 18px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:rgba(245,245,245,.78);transition:background .15s,color .15s}
+.ft-nav a:hover{background:var(--lime);color:#0A0A0A}
+.ft-ext{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+.ft-ext a{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 20px 0 16px;border-radius:999px;background:#161616;box-shadow:inset 0 0 0 1px rgba(245,245,245,.08);font-size:15px;font-weight:600;line-height:1;text-decoration:none;color:#F5F5F5;transition:box-shadow .15s,color .15s}
+.ft-ext a.noicon{padding-left:20px}
+.ft-ext a:hover{color:var(--lime);box-shadow:inset 0 0 0 1.5px var(--lime)}
+.ft-ext svg{flex:none;width:18px;height:18px;display:block}
+.ft-bot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:40px;padding-top:22px;border-top:1px solid rgba(245,245,245,.08);font-size:13px;color:rgba(245,245,245,.6)}
+.ft-top{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;color:#F5F5F5;text-decoration:none;font-weight:600;box-shadow:inset 0 0 0 1px rgba(245,245,245,.14);transition:background .15s,color .15s}
+.ft-top:hover{background:var(--lime);color:#0A0A0A;box-shadow:none}
+.ft-top svg{width:14px;height:14px}
+
+@keyframes wipe{to{clip-path:inset(0 0 0 0)}}
+@keyframes bar{to{transform:scaleX(1)}}
+@keyframes introOut{0%{clip-path:inset(0 0 0 0)}100%{clip-path:inset(0 0 100% 0);visibility:hidden}}
+@keyframes introCenter{to{transform:translateX(0)}}
+@keyframes introCenterM{to{transform:translateX(0) scale(1.35)}}
+@keyframes introLeaveM{from{transform:translateX(0) scale(1.35)}to{transform:translateX(0) translateY(-30px) scale(1.25);opacity:0}}
+@keyframes introPulse{0%{filter:drop-shadow(0 0 0 rgba(183,255,0,0))}40%{filter:drop-shadow(0 0 18px rgba(183,255,0,.55))}100%{filter:drop-shadow(0 0 0 rgba(183,255,0,0))}}
+@keyframes introLeave{from{transform:translateX(0)}to{transform:translateX(0) translateY(-36px) scale(.94);opacity:0}}
+@keyframes xIn{to{opacity:1;transform:scale(1)}}
+@keyframes revealRest{to{clip-path:inset(-10% 0 -10% 0)}}
+@keyframes edge{0%{left:17%;opacity:1}85%{opacity:1}100%{left:100%;opacity:0}}
+@keyframes glowIn{to{opacity:1}}
+@keyframes glowWide{from{opacity:1;left:-12%;width:42%}to{opacity:.55;left:5%;width:90%}}
+@keyframes heroIn{from{opacity:0;transform:scale(1.06)}to{opacity:1;transform:none}}
+@keyframes up{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes morph{0%{transform:rotate(0) scale(1)}50%{transform:rotate(18deg) scale(1.08)}100%{transform:rotate(-12deg) scale(.95)}}
+@keyframes twinkle{0%,100%{opacity:.12}50%{opacity:.7}}
+@keyframes eq{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}
+
+@media (max-width:1100px){
+  .brand .ig{display:none}
+  .nav a{padding:0 13px}
+  .car-txt{grid-column:1/7}.car-pics{grid-column:7/13;padding-left:40px}
+  .ct-l{grid-column:1/8}.ct-r{grid-column:8/13}
+}
+@media (max-width:820px){
+  .intro-mark{width:50vw;animation-name:introCenterM,introPulse,introLeaveM}
+  .hdr-bar{grid-template-columns:1fr auto;height:64px;gap:8px}
+  .hdr nav.main{display:none}
+  .brand img{width:118px;height:15px}
+  .menu-btn{display:inline-flex;flex-direction:column;gap:5px;width:44px;height:44px;background:rgba(10,10,10,.45);box-shadow:inset 0 0 0 1px rgba(245,245,245,.18)}
+  .menu-btn i{display:block;width:16px;height:2px;border-radius:2px;background:currentColor;transition:transform .25s var(--ease)}
+  .menu-btn.on i:first-child{transform:translateY(3.5px) rotate(45deg)}
+  .menu-btn.on i:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+  .mnav{display:block;position:absolute;left:12px;right:12px;top:68px;padding:10px;border-radius:24px;background:#141414;box-shadow:0 20px 50px -10px rgba(0,0,0,.7);transform:translateY(-8px) scale(.98);transform-origin:top right;opacity:0;visibility:hidden;transition:opacity .2s,transform .28s var(--ease),visibility 0s .28s}
+  .mnav.open{opacity:1;visibility:visible;transform:none;transition:opacity .2s,transform .28s var(--ease)}
+  .mnav ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+  .mnav li a{display:flex;align-items:center;min-height:54px;padding:0 18px;border-radius:16px;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:26px;text-transform:uppercase;text-decoration:none;color:#F5F5F5}
+  .mnav li a.on{background:var(--lime);color:#0A0A0A}
+  .mnav .ig{display:flex;align-items:center;min-height:48px;padding:0 18px;font-size:14px;color:rgba(245,245,245,.7);text-decoration:none}
+  section{scroll-margin-top:64px}
+
+  .hero{height:clamp(600px,92svh,800px);border-radius:0 0 22px 22px}
+  .hero-img{inset:-24px 0 0 0}
+  .hero-img img{object-position:58% 38%}
+  .hero-body{padding-bottom:22px}
+  .hero-row{flex-direction:column;align-items:stretch;gap:22px}
+  .hero-logo{width:100%;margin-top:14px}
+  .hero-act{flex-direction:column}
+  .hero-act .pill{width:100%}
+
+  .car{padding:96px 0 72px}
+  .car-grid{display:flex;flex-direction:column;align-items:stretch}
+  .car-pics{padding:0 0 60px 40px;margin-top:44px}
+  .car-small{width:46%;border-width:5px;border-radius:22px}
+  .car-p{font-size:16px}
+  .stat b{font-size:54px}
+  .crew{padding-bottom:88px}
+  .crew-grid{grid-template-columns:1fr;gap:28px}
+  .crew-mark{width:78%;margin:0 auto}
+  .crew-txt{align-items:stretch}
+  .crew-txt .pill{width:100%}
+
+  .shows{padding:24px 0 96px}
+  .sh-head{margin-bottom:40px}
+  .stage{width:70%;max-width:340px}
+  .vs.pl1{transform:translate3d(calc(-100% - 14px),0,0) scale(.88)}
+  .vs.pr1{transform:translate3d(calc(100% + 14px),0,0) scale(.88)}
+  .play{width:64px;height:64px;margin:-32px 0 0 -32px}
+  .pi{height:460px;scroll-snap-align:center}
+  .pt{gap:12px}
+
+  .ct{padding:80px 0 88px}
+  .ct-grid{display:flex;flex-direction:column}
+  .ct-r{margin-top:36px;align-self:stretch}
+  .form{grid-template-columns:1fr;margin-top:28px}
+  .form-foot{flex-direction:column;align-items:stretch}
+  .form-foot .pill{width:100%}
+
+  .ft{padding:48px 0 24px;border-radius:22px 22px 0 0}
+  .ft-a{flex-direction:column;align-items:flex-start;gap:24px}
+  .ft-logo img{width:200px}
+  .ft-a nav{width:100%}
+  .ft-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;border-radius:22px}
+  .ft-nav li{display:flex}
+  .ft-nav a{justify-content:center;height:44px;width:100%}
+  .ft-ext{margin-top:28px;gap:10px}
+  .ft-bot{flex-direction:column-reverse;align-items:flex-start;gap:14px;margin-top:32px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-delay:0s !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  html{scroll-behavior:auto}
+  [data-r]{opacity:1;transform:none}
+  [data-r="img"] img{transform:none}
+  .h-logo{clip-path:none}
+  .intro{display:none}
+}
+</style>
+</helmet>
+
+<div class="root {{rootCls}}">
+
+<div class="bg" aria-hidden="true" ref="{{bgRef}}">
+  <span class="blob l"><i></i></span>
+  <span class="blob m"><i></i></span>
+  <span class="blob o"><i></i></span>
+  <span class="spark" style="left: 12%; top: 18%"></span>
+  <span class="spark m" style="left: 86%; top: 34%; animation-delay: -1.5s"></span>
+  <span class="spark" style="left: 64%; top: 62%; animation-delay: -3s"></span>
+  <span class="spark o" style="left: 24%; top: 78%; animation-delay: -2.2s"></span>
+  <span class="spark" style="left: 44%; top: 8%; animation-delay: -4s"></span>
+  <span class="spark" style="left: 92%; top: 86%; animation-delay: -0.8s"></span>
+</div>
+
+<sc-if value="{{intro}}" hint-placeholder-val="{{ false }}">
+  <div class="intro" aria-hidden="true">
+    <div class="intro-mark">
+      <span class="intro-glow"></span>
+      <img class="intro-x" src="assets/logo/logo-x.png" width="768" height="98" alt="" fetchpriority="high">
+      <img class="intro-rest" src="assets/logo/logo-avier.png" width="768" height="98" alt="" fetchpriority="high">
+      <span class="intro-edge"></span>
+    </div>
+  </div>
+</sc-if>
+
+<header class="hdr {{hdrCls}}">
+  <div class="wrap hdr-bar">
+    <div class="brand">
+      <a class="lg" href="#inicio" onClick="{{closeMenu}}"><img src="assets/logo/logo-xavier-branco.png" width="768" height="98" alt="Xavier — página inicial"></a>
+      <a class="ig" href="https://www.instagram.com/djxavieroficial/" target="_blank" rel="noopener noreferrer">@djxavieroficial</a>
+    </div>
+    <nav class="main" aria-label="Navegação principal">
+      <ul class="nav">
+        <sc-for list="{{navItems}}" as="n" hint-placeholder-count="4">
+          <li><a class="{{n.cls}}" href="{{n.href}}" aria-current="{{n.current}}">{{n.label}}</a></li>
+        </sc-for>
+      </ul>
+    </nav>
+    <div class="hdr-r">
+      <a class="pill sm" href="#contato" onClick="{{closeMenu}}">Contratar</a>
+      <button class="rbtn menu-btn {{menuBtnCls}}" type="button" aria-label="Menu" aria-expanded="{{menuExpanded}}" aria-controls="mnav" onClick="{{toggleMenu}}"><i></i><i></i></button>
+    </div>
+  </div>
+  <div class="mnav {{mnavCls}}" id="mnav">
+    <nav aria-label="Navegação">
+      <ul>
+        <sc-for list="{{navItems}}" as="n" hint-placeholder-count="4">
+          <li><a class="{{n.cls}}" href="{{n.href}}" onClick="{{closeMenu}}">{{n.label}}</a></li>
+        </sc-for>
+      </ul>
+    </nav>
+    <a class="ig" href="https://www.instagram.com/djxavieroficial/" target="_blank" rel="noopener noreferrer">@djxavieroficial ↗</a>
+  </div>
+</header>
+
+<main>
+<section id="inicio" class="hero" aria-label="Início">
+  <div class="hero-img h-photo" ref="{{heroImgRef}}">
+    <img src="assets/img/inicio-pioneer.jpg" width="1440" height="1920" fetchpriority="high" alt="DJ Xavier sorrindo enquanto mixa em equipamento Pioneer DJ no palco">
+  </div>
+  <div class="hero-shade"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-body">
+    <div class="wrap hero-row">
+      <h1 style="margin: 0">
+        <span class="kick h-up">DJ Xavier · O DJ da Baguncinha</span>
+        <img class="hero-logo h-logo" src="assets/logo/logo-xavier-branco.png" width="768" height="98" alt="Xavier">
+      </h1>
+      <div class="hero-act h-up2">
+        <a class="pill" href="#contato">Contratar para meu evento
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </a>
+        <a class="pill line" href="#shows">Ver shows</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="carreira" class="car" aria-labelledby="t-car">
+  <div class="wrap car-grid">
+    <div class="car-txt">
+      <span class="kick" data-r="">Carreira</span>
+      <h2 class="h2 cond" id="t-car" data-r="" data-d="1">O DJ da <em>Baguncinha</em></h2>
+      <p class="car-p" data-r="" data-d="2">DJ Xavier é o DJ da Baguncinha. Ao lado da <strong>Baguncinha Crew</strong>, já realizou mais de 500 festas de XV anos e casamentos.</p>
+      <div class="stat" data-r="" data-d="2"><b>+500</b><span>XV e casamentos realizados</span></div>
+      <div class="car-links" data-r="" data-d="3">
+        <a class="pill sm" href="#contato">Contratar</a>
+      </div>
+    </div>
+    <div class="car-pics">
+      <div class="media car-big" data-r="img"><img ref="{{carImgRef}}" src="assets/img/carreira-baguncinha2000.jpg" width="1440" height="1918" loading="lazy" decoding="async" alt="DJ Xavier de costas, com a camisa Baguncinha 2000, diante do público com as mãos para o alto"></div>
+      <div class="media car-small" data-r="img" data-d="2"><img src="assets/img/carreira-estudio-listrada.jpg" width="900" height="1350" loading="lazy" decoding="async" alt="DJ Xavier agachado em estúdio, com camisa listrada verde e preta"></div>
+    </div>
+  </div>
+</section>
+
+<section class="crew" aria-labelledby="t-crew">
+  <div class="wrap crew-grid">
+    <div class="crew-mark" data-r="">
+      <span class="crew-glow" aria-hidden="true"></span>
+      <img ref="{{crewLogoRef}}" src="assets/logo/baguncinha-crew-logo.png" width="692" height="692" loading="lazy" decoding="async" alt="Logo da Baguncinha Crew">
+    </div>
+    <div class="crew-txt">
+      <h2 class="crew-h cond" id="t-crew" data-r="">DJ Xavier × <span>Baguncinha Crew</span></h2>
+      <a class="track" href="https://onerpm.link/piquejogador" target="_blank" rel="noopener noreferrer" data-r="" data-d="1">
+        <svg class="sp" viewBox="0 0 24 24" role="img" aria-label="Spotify"><path fill="#1ED760" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"></path></svg>
+        <span class="track-name">Pique Jogador</span>
+        <svg class="track-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+      </a>
+      <a class="pill line" href="https://www.instagram.com/baguncinha.crew/" target="_blank" rel="noopener noreferrer" data-r="" data-d="2">@baguncinha.crew ↗</a>
+    </div>
+  </div>
+</section>
+
+<section id="shows" class="shows" aria-labelledby="t-shows" ref="{{showsRef}}">
+  <div class="wrap">
+    <div class="sh-head">
+      <h2 class="h2 cond" id="t-shows" data-r="">Shows</h2>
+    </div>
+    <div class="lbl2" data-r=""><h3 class="cond">Vídeos</h3><i></i></div>
+  </div>
+
+  <div class="vc" tabIndex="0" role="region" aria-roledescription="carrossel" aria-label="Vídeos das apresentações. Use as setas para navegar e Enter para reproduzir." data-r="" onKeyDown="{{vKey}}" onPointerDown="{{vDown}}" onPointerMove="{{vMove}}" onPointerUp="{{vUp}}" onPointerCancel="{{vUp}}">
+    <div class="stage" ref="{{stageRef}}">
+      <sc-for list="{{slides}}" as="s" hint-placeholder-count="3">
+        <div class="vs {{s.cls}}" onClick="{{s.click}}" aria-hidden="{{s.hidden}}">
+          <video ref="{{s.vref}}" src="{{s.src}}" poster="{{s.poster}}" preload="{{s.preload}}" width="540" height="960" onEnded="{{s.ended}}" aria-label="{{s.aria}}"></video>
+          <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+          <button class="play" type="button" onClick="{{s.toggle}}" aria-label="{{s.playLabel}}" tabIndex="{{s.tab}}">
+            <sc-if value="{{s.isPlaying}}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4.2" height="14" rx="1.2"></rect><rect x="13.8" y="5" width="4.2" height="14" rx="1.2"></rect></svg></sc-if>
+            <sc-if value="{{s.notPlaying}}" hint-placeholder-val="{{ true }}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.2v13.6c0 .8.9 1.3 1.6.8l10.2-6.8a1 1 0 0 0 0-1.6L9.6 4.4C8.9 3.9 8 4.4 8 5.2z"></path></svg></sc-if>
+          </button>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  <div class="dots">
+    <sc-for list="{{slides}}" as="s" hint-placeholder-count="3">
+      <button type="button" class="{{s.dotCls}}" onClick="{{s.select}}" aria-label="{{s.dotLabel}}" aria-current="{{s.current}}"><i></i></button>
+    </sc-for>
+  </div>
+
+  <div class="wrap" style="margin-top: 96px">
+    <div class="lbl2" data-r=""><h3 class="cond">Fotos</h3><i></i></div>
+  </div>
+  <div class="pt" ref="{{ptRef}}" tabIndex="0" role="region" aria-label="Fotos das apresentações. Use as setas para navegar." data-r="" onScroll="{{pScroll}}" onKeyDown="{{pKey}}" onPointerDown="{{pDown}}" onPointerMove="{{pMove}}" onPointerUp="{{pUp}}" onPointerCancel="{{pUp}}" onPointerLeave="{{pUp}}">
+    <sc-for list="{{photos}}" as="p" hint-placeholder-count="4">
+      <button type="button" class="pi media {{p.shape}}" onClick="{{p.open}}" aria-label="{{p.aria}}" draggable="false">
+        <img src="{{p.src}}" width="{{p.w}}" height="{{p.h}}" alt="{{p.alt}}" loading="lazy" decoding="async" draggable="false" style="object-position: {{p.pos}}">
+      </button>
+    </sc-for>
+  </div>
+  <div class="wrap"><div class="ptrack"><div class="pthumb" ref="{{thumbRef}}"></div></div></div>
+</section>
+
+<section id="contato" class="ct" aria-labelledby="t-ct">
+  <div class="wrap ct-grid">
+    <div class="ct-l">
+      <span class="kick" data-r="">Contratação</span>
+      <h2 class="h2 cond" id="t-ct" data-r="" data-d="1">Vamos levar o <em>DJ Xavier</em> para seu evento?</h2>
+      <p class="ct-lead" data-r="" data-d="2">Preencha os dados e envie seu pedido.</p>
+      <form class="form" onSubmit="{{submit}}" data-r="" data-d="2">
+        <div class="fld"><label for="f-nome">Nome</label><input id="f-nome" name="nome" type="text" autocomplete="name" required="required"></div>
+        <div class="fld"><label for="f-tipo">Tipo de evento</label>
+          <select id="f-tipo" name="tipo" required="required">
+            <option value="">Selecione</option>
+            <option>XV anos</option>
+            <option>Casamento</option>
+            <option>Aniversário</option>
+            <option>Festa</option>
+            <option>Evento corporativo</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="fld"><label for="f-data">Data do evento</label><input id="f-data" name="data" type="date" required="required"></div>
+        <div class="fld"><label for="f-local">Cidade / local</label><input id="f-local" name="local" type="text" autocomplete="address-level2" required="required"></div>
+        <div class="fld full"><label for="f-info">Informações adicionais</label><textarea id="f-info" name="info" rows="3"></textarea></div>
+        <div class="form-foot">
+          <button class="pill" type="submit">Enviar pedido
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </button>
+          <p>{{sendHint}}</p>
+        </div>
+        <sc-if value="{{status}}" hint-placeholder-val="{{ false }}"><div class="status" role="status">{{status}}</div></sc-if>
+      </form>
+    </div>
+    <div class="ct-r">
+      <a class="ig-card" href="https://www.instagram.com/djxavieroficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram oficial @djxavieroficial" data-r="" data-d="1">
+        <span class="ig-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect><circle cx="12" cy="12" r="4.3"></circle><circle cx="17.4" cy="6.6" r="1.25" fill="currentColor" stroke="none"></circle></svg></span>
+        <span class="ig-txt"><small>Instagram oficial</small><b>@djxavieroficial</b></span>
+        <svg class="ig-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-a">
+      <a class="ft-logo" href="#inicio"><img src="assets/logo/logo-xavier-branco.png" width="768" height="98" alt="Xavier — voltar ao início" loading="lazy"></a>
+      <nav aria-label="Rodapé"><ul class="ft-nav">
+        <li><a href="#inicio">Início</a></li><li><a href="#carreira">Carreira</a></li><li><a href="#shows">Shows</a></li><li><a href="#contato">Contato</a></li>
+      </ul></nav>
+    </div>
+    <div class="ft-ext">
+      <a class="noicon" href="https://www.instagram.com/baguncinha.crew/" target="_blank" rel="noopener noreferrer">Baguncinha Crew</a>
+      <a href="https://onerpm.link/piquejogador" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#1ED760" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"></path></svg>
+        <span>Pique Jogador</span>
+      </a>
+    </div>
+    <div class="ft-bot">
+      <span>© 2026 DJ Xavier. Todos os direitos reservados.</span>
+      <a class="ft-top" href="#inicio">Voltar ao topo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg></a>
+    </div>
+  </div>
+</footer>
+
+<sc-if value="{{lbOpen}}" hint-placeholder-val="{{ false }}">
+  <div class="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada" tabIndex="-1" ref="{{lbRef}}" onKeyDown="{{lbKey}}" onClick="{{lbBackdrop}}">
+    <button class="rbtn lb-x" type="button" aria-label="Fechar" onClick="{{lbClose}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+    <img src="{{lbSrc}}" alt="{{lbAlt}}">
+    <div class="lb-nav">
+      <button class="rbtn" type="button" aria-label="Foto anterior" onClick="{{lbPrev}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+      <button class="rbtn" type="button" aria-label="Próxima foto" onClick="{{lbNext}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"whatsapp":{"editor":"text","default":"","section":"Contato — configuração"},"intro":{"editor":"boolean","default":true,"section":"Abertura"},"$preview":{"width":1440,"height":5780}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    let seen = false;
+    try { seen = window.sessionStorage.getItem('xv-intro') === '1'; } catch (e) {}
+    const rm = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const play = !seen && !rm && props.intro !== false;
+    this.state = { intro: play, introPlayed: play, menu: false, section: 'inicio', solid: false, active: 0, playing: false, lb: -1, status: '' };
+    this.vids = [];
+    this.VIDEOS = [
+      { src: 'assets/video/video-01.mp4', poster: 'assets/img/poster-01.jpg' },
+      { src: 'assets/video/video-02.mp4', poster: 'assets/img/poster-02.jpg' },
+      { src: 'assets/video/video-03.mp4', poster: 'assets/img/poster-03.jpg' }
+    ];
+    this.PHOTOS = [
+      { src: 'assets/img/shows-microfone-roxo.jpg', w: 1500, h: 2000, shape: 'a', pos: '35% 45%', alt: 'DJ Xavier sorrindo ao microfone, de camisa roxa com chamas, no meio da festa' },
+      { src: 'assets/img/shows-telefone-azul.jpg', w: 900, h: 1200, shape: 'b', pos: '60% 40%', alt: 'DJ Xavier ao telefone nos bastidores, olhando para cima, de camisa azul com chamas' }
+    ];
+    this.NAV = [['inicio', 'Início'], ['carreira', 'Carreira'], ['shows', 'Shows'], ['contato', 'Contato']];
+    this.cur = { x: 0, y: 0 }; this.tgt = { x: 0, y: 0 };
+    this.onScroll = this.onScroll.bind(this);
+    this.onPointer = this.onPointer.bind(this);
+    this.lerp = this.lerp.bind(this);
+  }
+
+  componentDidMount() {
+    const mm = (q) => (window.matchMedia ? window.matchMedia(q).matches : false);
+    this.reduce = mm('(prefers-reduced-motion: reduce)');
+    this.fine = mm('(hover: hover) and (pointer: fine)');
+    if (this.state.intro) {
+      try { window.sessionStorage.setItem('xv-intro', '1'); } catch (e) {}
+      this.introT = setTimeout(() => this.setState({ intro: false }), 2250);
+    }
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll, { passive: true });
+    if (this.fine && !this.reduce) window.addEventListener('pointermove', this.onPointer, { passive: true });
+    if ('IntersectionObserver' in window) {
+      this.io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); this.io.unobserve(e.target); } }), { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+      document.querySelectorAll('[data-r]').forEach((el) => this.io.observe(el));
+      this.so = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting && e.target.id !== this.state.section) this.setState({ section: e.target.id }); }), { rootMargin: '-45% 0px -50% 0px' });
+      this.NAV.forEach((n) => { const el = document.getElementById(n[0]); if (el) this.so.observe(el); });
+      this.vio = new IntersectionObserver((es) => es.forEach((e) => { if (!e.isIntersecting) this.pauseAll(); }), { threshold: 0.1 });
+      if (this.showsEl) this.vio.observe(this.showsEl);
+    } else {
+      document.querySelectorAll('[data-r]').forEach((el) => el.classList.add('in'));
+    }
+    this.onScroll();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    window.removeEventListener('pointermove', this.onPointer);
+    [this.io, this.so, this.vio].forEach((o) => o && o.disconnect());
+    clearTimeout(this.introT);
+    [this.raf, this.praf, this.lraf].forEach((r) => r && cancelAnimationFrame(r));
+    this.vids.forEach((v) => v && v.pause());
+  }
+
+  componentDidUpdate() {
+    const lb = this.state.lb, was = this.lastLb == null ? -1 : this.lastLb;
+    this.lastLb = lb;
+    if (lb > -1 && was === -1 && this.lbEl) this.lbEl.focus();
+    if (lb === -1 && was > -1 && this.lbReturn) this.lbReturn.focus();
+  }
+
+  onPointer(e) {
+    this.tgt.x = (e.clientX / window.innerWidth) * 2 - 1;
+    this.tgt.y = (e.clientY / window.innerHeight) * 2 - 1;
+    if (!this.lraf) this.lraf = requestAnimationFrame(this.lerp);
+  }
+
+  lerp() {
+    this.lraf = 0;
+    const c = this.cur, t = this.tgt;
+    c.x += (t.x - c.x) * 0.06; c.y += (t.y - c.y) * 0.06;
+    if (this.bg) { this.bg.style.setProperty('--mx', c.x.toFixed(3)); this.bg.style.setProperty('--my', c.y.toFixed(3)); }
+    if (Math.abs(t.x - c.x) > 0.002 || Math.abs(t.y - c.y) > 0.002) this.lraf = requestAnimationFrame(this.lerp);
+  }
+
+  onScroll() { if (!this.raf) this.raf = requestAnimationFrame(() => this.tick()); }
+
+  tick() {
+    this.raf = 0;
+    const y = window.scrollY, vh = window.innerHeight;
+    const solid = y > 30;
+    if (solid !== this.state.solid) this.setState({ solid });
+    if (this.reduce) { this.pTick(); return; }
+    const doc = document.documentElement.scrollHeight - vh;
+    if (this.bg) this.bg.style.setProperty('--sy', (doc > 0 ? y / doc : 0).toFixed(3));
+    if (this.heroImg && y < 1100) this.heroImg.style.transform = 'translate3d(0,' + (y * 0.1).toFixed(1) + 'px,0)';
+    if (this.second) {
+      const r = this.second.getBoundingClientRect();
+      if (r.top < vh && r.bottom > 0) {
+        const p = Math.max(0, Math.min(1, (vh - r.top) / (vh * 0.75)));
+        this.second.style.transform = 'scale(' + (0.9 + p * 0.1).toFixed(4) + ')';
+        const im = this.second.firstElementChild;
+        if (im) im.style.transform = 'translate3d(0,' + ((1 - p) * -50).toFixed(1) + 'px,0) scale(1.12)';
+      }
+    }
+    if (this.crewLogo) {
+      const r = this.crewLogo.getBoundingClientRect();
+      if (r.top < vh && r.bottom > 0) { const p = (r.top + r.height / 2 - vh / 2) / vh; this.crewLogo.style.transform = 'translate3d(0,' + (p * -30).toFixed(1) + 'px,0) rotate(' + (p * -4).toFixed(2) + 'deg)'; }
+    }
+    if (this.carImg) {
+      const r = this.carImg.parentElement.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < vh) { const p = (r.top + r.height / 2 - vh / 2) / vh; this.carImg.style.transform = 'translate3d(0,' + (p * -40).toFixed(1) + 'px,0) scale(1.1)'; }
+    }
+    this.pTick();
+  }
+
+  pTick() {
+    const t = this.pt, th = this.thumb;
+    if (!t || !th) return;
+    const max = t.scrollWidth - t.clientWidth;
+    const ratio = t.scrollWidth ? Math.min(1, t.clientWidth / t.scrollWidth) : 1;
+    th.style.width = (ratio * 100).toFixed(2) + '%';
+    const p = max > 0 ? t.scrollLeft / max : 0;
+    th.style.transform = 'translate3d(' + (p * th.parentElement.clientWidth * (1 - ratio)).toFixed(1) + 'px,0,0)';
+  }
+
+  pauseAll() {
+    this.vids.forEach((v) => { if (v && !v.paused) v.pause(); });
+    if (this.state.playing) this.setState({ playing: false });
+  }
+
+  go(i) {
+    const n = this.VIDEOS.length, to = ((i % n) + n) % n;
+    if (to === this.state.active) return;
+    this.vids.forEach((v) => { if (v && !v.paused) v.pause(); });
+    this.setState({ active: to, playing: false });
+  }
+
+  toggle(i) {
+    const v = this.vids[i];
+    if (!v) return;
+    if (i !== this.state.active) { this.go(i); return; }
+    if (v.paused) {
+      v.muted = false;
+      const pr = v.play();
+      if (pr && pr.catch) pr.catch(() => { v.muted = true; v.play().catch(() => {}); });
+      this.setState({ playing: true });
+    } else { v.pause(); this.setState({ playing: false }); }
+  }
+
+  submit(e) {
+    e.preventDefault();
+    const f = e.currentTarget.elements;
+    const val = (k) => (f[k] && f[k].value ? f[k].value.trim() : '');
+    let data = val('data');
+    if (/^\d{4}-\d{2}-\d{2}$/.test(data)) { const p = data.split('-'); data = p[2] + '/' + p[1] + '/' + p[0]; }
+    const msg = 'Olá, DJ Xavier! Quero contratar para meu evento.\n\nNome: ' + val('nome') + '\nTipo de evento: ' + val('tipo') + '\nData: ' + data + '\nCidade/local: ' + val('local') + '\nInformações adicionais: ' + (val('info') || '—');
+    const wa = String(this.props.whatsapp || '').replace(/\D/g, '');
+    if (wa) {
+      window.open('https://wa.me/' + wa + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+      this.setState({ status: 'Seu pedido abriu no WhatsApp. Confira e toque em enviar.' });
+      return;
+    }
+    const open = () => window.open('https://ig.me/m/djxavieroficial', '_blank', 'noopener');
+    const done = (ok) => this.setState({ status: ok ? 'Pedido copiado. Abrimos o Direct do @djxavieroficial: é só colar e enviar.' : 'Abrimos o Direct do @djxavieroficial. Envie: ' + msg.replace(/\n+/g, ' · ') });
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(msg).then(() => { open(); done(true); }, () => { open(); done(false); });
+    else { open(); done(false); }
+  }
+
+  renderVals() {
+    const s = this.state, n = this.VIDEOS.length;
+    const posOf = (i) => { let d = i - s.active; if (d > n / 2) d -= n; if (d < -n / 2) d += n; return d === 0 ? 'p0' : d === -1 ? 'pl1' : d === 1 ? 'pr1' : d < 0 ? 'pl2' : 'pr2'; };
+    const slides = this.VIDEOS.map((v, i) => {
+      const act = i === s.active, pl = act && s.playing;
+      return {
+        src: v.src, poster: v.poster,
+        cls: posOf(i) + (pl ? ' is-playing' : ''),
+        hidden: act ? 'false' : 'true', tab: act ? 0 : -1,
+        preload: act ? 'metadata' : 'none',
+        aria: 'Vídeo ' + (i + 1) + ' de ' + n,
+        isPlaying: pl, notPlaying: !pl, playLabel: pl ? 'Pausar vídeo' : 'Reproduzir vídeo',
+        dotCls: act ? 'on' : '', current: act ? 'true' : 'false', dotLabel: 'Vídeo ' + (i + 1),
+        click: () => { if (this.vDragged) return; act ? this.toggle(i) : this.go(i); },
+        select: () => this.go(i),
+        toggle: (e) => { e.stopPropagation(); this.toggle(i); },
+        ended: () => { if (i === this.state.active) this.setState({ playing: false }); },
+        vref: (el) => { this.vids[i] = el; if (el) el.setAttribute('playsinline', ''); }
+      };
+    });
+    const P = this.PHOTOS, pn = P.length;
+    const photos = P.map((p, i) => ({ ...p, aria: 'Ampliar foto ' + (i + 1) + ' de ' + pn,
+      open: (e) => { if (this.pDragged) return; this.lbReturn = e.currentTarget; this.setState({ lb: i }); } }));
+    const lbGo = (d) => this.setState({ lb: (this.state.lb + d + pn) % pn });
+    const wa = String(this.props.whatsapp || '').replace(/\D/g, '');
+    return {
+      rootCls: s.introPlayed ? 'has-intro' : '',
+      intro: s.intro,
+      hdrCls: s.solid || s.menu ? 'solid' : '',
+      navItems: this.NAV.map((x) => ({ href: '#' + x[0], label: x[1], cls: s.section === x[0] ? 'on' : '', current: s.section === x[0] ? 'location' : 'false' })),
+      menuBtnCls: s.menu ? 'on' : '', mnavCls: s.menu ? 'open' : '', menuExpanded: s.menu ? 'true' : 'false',
+      toggleMenu: () => this.setState({ menu: !this.state.menu }),
+      closeMenu: () => { if (this.state.menu) this.setState({ menu: false }); },
+      bgRef: (el) => { this.bg = el; },
+      heroImgRef: (el) => { this.heroImg = el; },
+      carImgRef: (el) => { this.carImg = el; },
+      secondRef: (el) => { this.second = el; },
+      crewLogoRef: (el) => { this.crewLogo = el; },
+      showsRef: (el) => { this.showsEl = el; },
+      stageRef: (el) => { this.stage = el; },
+      slides,
+      vKey: (e) => {
+        if (e.key === 'ArrowRight') { e.preventDefault(); this.go(this.state.active + 1); }
+        else if (e.key === 'ArrowLeft') { e.preventDefault(); this.go(this.state.active - 1); }
+        else if ((e.key === ' ' || e.key === 'Enter') && e.target === e.currentTarget) { e.preventDefault(); this.toggle(this.state.active); }
+      },
+      vDown: (e) => { if (e.button && e.button !== 0) return; this.vx = e.clientX; this.vDragged = false; },
+      vMove: (e) => {
+        if (this.vx == null || !this.stage) return;
+        const d = e.clientX - this.vx;
+        if (Math.abs(d) > 6) { this.vDragged = true; this.stage.style.transition = 'none'; this.stage.style.transform = 'translate3d(' + (d * 0.5).toFixed(1) + 'px,0,0)'; }
+      },
+      vUp: (e) => {
+        if (this.vx == null) return;
+        const d = e.clientX - this.vx; this.vx = null;
+        if (this.stage) { this.stage.style.transition = 'transform .3s cubic-bezier(.22,1,.36,1)'; this.stage.style.transform = ''; }
+        if (Math.abs(d) > 40) this.go(this.state.active + (d < 0 ? 1 : -1));
+        setTimeout(() => { this.vDragged = false; }, 0);
+      },
+      ptRef: (el) => { this.pt = el; },
+      thumbRef: (el) => { this.thumb = el; if (el) requestAnimationFrame(() => this.pTick()); },
+      photos,
+      pScroll: () => { if (!this.praf) this.praf = requestAnimationFrame(() => { this.praf = 0; this.pTick(); }); },
+      pKey: (e) => {
+        if (!this.pt) return;
+        const step = this.pt.clientWidth * 0.6, b = this.reduce ? 'auto' : 'smooth';
+        if (e.key === 'ArrowRight') { e.preventDefault(); this.pt.scrollBy({ left: step, behavior: b }); }
+        else if (e.key === 'ArrowLeft') { e.preventDefault(); this.pt.scrollBy({ left: -step, behavior: b }); }
+      },
+      pDown: (e) => { if (e.pointerType !== 'mouse' || e.button !== 0 || !this.pt) return; this.px = e.clientX; this.ps = this.pt.scrollLeft; this.pDragged = false; },
+      pMove: (e) => {
+        if (this.px == null || !this.pt) return;
+        const d = e.clientX - this.px;
+        if (!this.pDragged && Math.abs(d) > 6) { this.pDragged = true; this.pt.classList.add('drag'); }
+        if (this.pDragged) this.pt.scrollLeft = this.ps - d;
+      },
+      pUp: () => {
+        if (this.px == null) return;
+        this.px = null;
+        if (this.pt) this.pt.classList.remove('drag');
+        setTimeout(() => { this.pDragged = false; }, 0);
+      },
+      lbOpen: s.lb > -1,
+      lbSrc: s.lb > -1 ? P[s.lb].src : '', lbAlt: s.lb > -1 ? P[s.lb].alt : '',
+      lbRef: (el) => { this.lbEl = el; },
+      lbClose: () => this.setState({ lb: -1 }),
+      lbPrev: (e) => { e.stopPropagation(); lbGo(-1); },
+      lbNext: (e) => { e.stopPropagation(); lbGo(1); },
+      lbBackdrop: (e) => { if (e.target === e.currentTarget) this.setState({ lb: -1 }); },
+      lbKey: (e) => {
+        if (e.key === 'Escape') { e.preventDefault(); this.setState({ lb: -1 }); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); lbGo(1); }
+        else if (e.key === 'ArrowLeft') { e.preventDefault(); lbGo(-1); }
+      },
+      submit: (e) => this.submit(e),
+      status: s.status,
+      sendHint: wa ? 'O pedido abre no WhatsApp, já preenchido.' : 'O pedido vira uma mensagem pronta e segue pelo Direct do Instagram oficial.'
+    };
+  }
+}
+</script>
+</body>
+</html>

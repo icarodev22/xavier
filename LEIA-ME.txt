@@ -1,0 +1,34 @@
+DJ XAVIER — SITE
+
+COMO ABRIR
+O site é estático: basta hospedar a pasta inteira (Netlify, Vercel, Hostinger, GitHub Pages
+ou qualquer hospedagem comum). O arquivo principal é index.html.
+
+Para testar no computador, rode um servidor local dentro desta pasta, por exemplo:
+  python3 -m http.server 8000
+e abra http://localhost:8000
+(Abrir o index.html com duplo clique funciona, mas alguns navegadores bloqueiam os vídeos
+fora de um servidor.)
+
+ESTRUTURA
+index.html                  página completa
+assets/js/runtime.js        motor que monta a página (inclui React)
+assets/img/                 fotografias e capas dos vídeos
+assets/video/               os 3 vídeos do carrossel
+assets/logo/                logo XAVIER (completa, só o X, só AVIER) e logo da Baguncinha Crew sem fundo
+original-logos/             logo da Baguncinha Crew sem fundo em resolução cheia
+
+WHATSAPP (OPCIONAL)
+Sem número configurado, o formulário monta a mensagem e abre o Direct do @djxavieroficial.
+Para enviar pelo WhatsApp, abra index.html, procure por
+  "whatsapp":{"editor":"text","default":""
+e coloque o número com DDI e DDD entre as aspas do default, por exemplo "5511999999999".
+
+ABERTURA ANIMADA
+Aparece uma vez por visita. Para desativar, troque em index.html
+  "intro":{"editor":"boolean","default":true
+para false.
+
+FOTOS NÃO UTILIZADAS
+IMG_0122_(2).JPG e IMG_0128_(2).JPG (marca-d'água da Cenário Filmes), EF3908FC e a foto do
+palco com o braço erguido (2.jpg) não estão no site. Os arquivos originais não foram alterados.
